@@ -5,7 +5,8 @@ questions = ["Which is the Smallest ocean?\na.Indian\t\tb.Pacific\nc.Atlantic\t\
              "The world's longest straight road without any corners is located in?\na.USA\t\t\tb.Australia\nc.Saudi Arabia\t\td.China", "Which one is the largest tropical rain forest in the world?\na.Amazon\t\tb.Southeast Asian Rain Forest\nc.Bosawas\t\td.Daintree Rain Forest", 
              "Which country is known as 'Land of Thousands Lakes'?\na.Iceland\t\tb.Norway\nc.Finland\t\td.Switzerland", "In which country, white elephant is found?\na.India\t\t\tb.Sir Lanka\nc.Thialand\t\td.Malaysia"]
 ans = ["d", "a", "a", "d", "b", "d", "c", "a", "c", "c"]
-name = input("Enter your name:")
+nam = input("Enter your name:")
+name=nam.upper()
 amount = 0
 result = "T"
 command = input("press y to start and n to abort:")
@@ -24,18 +25,19 @@ if (result == "T"):
                         print("Congratulation", name, "you have won:", amount)
                         wish = input("Do you wish to continue playing y or n:")
                         if(i==9):
-                            print(name, "your total win is:", amount)
+                            print(name, "your total win is:", amount,"You are CROREPATI")
                             print("Thankyou for Playing".center(50, "-"))
                             break
                         elif (wish.lower() == "y"):
                             pass
                         else:
+                            print(name, "You have won:", amount)
+                            print("Thank you for playing".center(50, "."))
                             print(":".center(50, "."))
                             break
 
                     else:
-                        print(
-                            "The option which you have entered is wrong".center(50, "/"))
+                        print("The option which you have entered is wrong".center(50, "/"))
                         print(name, "your total win is:", amount)
                         print("Thankyou for Playing".center(50, "-"))
                         break
