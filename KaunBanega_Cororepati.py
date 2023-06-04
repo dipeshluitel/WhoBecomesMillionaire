@@ -3,7 +3,7 @@ questions = ["Which is the Smallest ocean?\na.Indian\t\tb.Pacific\nc.Atlantic\t\
              "Which Country is also known as 'Land of Rising Sun'?\na.Japan\t\tb.New Zealand\nc.Fiji\t\tc.China", "Which Continent has the highest number of countries?\na.Asia\t\t\tb.North America\nc.Europe\t\td.Africa", 
              "Total number of ocean in the world is?\na.3\t\tb.5\nc.7\t\td.12","Which is one of the biggest island?\na.Borneo\t\tb.Finland\nc.Sumatra\t\td.Greenland", 
              "The world's longest straight road without any corners is located in?\na.USA\t\t\tb.Australia\nc.Saudi Arabia\t\td.China", "Which one is the largest tropical rain forest in the world?\na.Amazon\t\tb.Southeast Asian Rain Forest\nc.Bosawas\t\td.Daintree Rain Forest", 
-             "Which country is known as 'Land of Thousands Lakes'?\na.Iceland\t\tb.Norway\nc.Finland\t\td.Switzerland", "In which country, white elephant is found?\na.India\t\tb.Sir Lanka\nc.Thialand\t\td.Malaysia"]
+             "Which country is known as 'Land of Thousands Lakes'?\na.Iceland\t\tb.Norway\nc.Finland\t\td.Switzerland", "In which country, white elephant is found?\na.India\t\t\tb.Sir Lanka\nc.Thialand\t\td.Malaysia"]
 ans = ["d", "a", "a", "d", "b", "d", "c", "a", "c", "c"]
 name = input("Enter your name:")
 amount = 0
@@ -23,11 +23,15 @@ if (result == "T"):
                         amount = amount+100000
                         print("Congratulation", name, "you have won:", amount)
                         wish = input("Do you wish to continue playing y or n:")
-                        if (wish.lower() == "y"):
+                        if(i==9):
+                            print(name, "your total win is:", amount)
+                            print("Thankyou for Playing".center(50, "-"))
+                            break
+                        elif (wish.lower() == "y"):
                             pass
                         else:
+                            print(":".center(50, "."))
                             break
-                        print(":".center(50, "."))
 
                     else:
                         print(
@@ -40,3 +44,5 @@ if (result == "T"):
             print(name, "You have won:", amount)
             print("Thank you for playing".center(50, "."))
             result = "F"
+        case __:
+            print("Invalid Input")
