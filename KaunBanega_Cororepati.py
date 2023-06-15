@@ -1,50 +1,80 @@
 # source = https://www.edudwar.com/world-gk-quiz-questions-and-answers/
-questions = ["Which is the Smallest ocean?\na.Indian\t\tb.Pacific\nc.Atlantic\t\td.Arctic", "Which country gifted 'Statue of Liberty' to USA?\na.France\t\tb.Canada\nC.Brazil\t\td.England", 
-             "Which Country is also known as 'Land of Rising Sun'?\na.Japan\t\tb.New Zealand\nc.Fiji\t\tc.China", "Which Continent has the highest number of countries?\na.Asia\t\t\tb.North America\nc.Europe\t\td.Africa", 
-             "Total number of ocean in the world is?\na.3\t\tb.5\nc.7\t\td.12","Which is one of the biggest island?\na.Borneo\t\tb.Finland\nc.Sumatra\t\td.Greenland", 
-             "The world's longest straight road without any corners is located in?\na.USA\t\t\tb.Australia\nc.Saudi Arabia\t\td.China", "Which one is the largest tropical rain forest in the world?\na.Amazon\t\tb.Southeast Asian Rain Forest\nc.Bosawas\t\td.Daintree Rain Forest", 
-             "Which country is known as 'Land of Thousands Lakes'?\na.Iceland\t\tb.Norway\nc.Finland\t\td.Switzerland", "In which country, white elephant is found?\na.India\t\t\tb.Sir Lanka\nc.Thialand\t\td.Malaysia"]
-ans = ["d", "a", "a", "d", "b", "d", "c", "a", "c", "c"]
+#Question For quiz
+questions = [["Which is the Smallest ocean?", "Indian", "Pacific", "Atlantic", "Arctic", "d"],
+             ["Which country gifted 'Statue of Liberty' to USA?", "France","Canada","Brazil","England","a"],
+             ["Which Country is also known as 'Land of Rising Sun'?","Japan", "New Zealand", "Fiji","China","a"],
+             ["Which Continent has the highest number of countries?","Asia", "North America", "Europe", "Africa","d"],
+             ["Total number of ocean in the world is?","3", "5", "7", "12","b"],
+             ["Which is one of the biggest island?","Borneo", "Finland", "Sumatra","Greenland","d"],
+             ["The world's longest straight road without any corners is located in?","USA", "Australia", "Sauid Arabia", "China","c"],
+             ["Which one is the largest tropical rain forest in the world?","Amazon", "South East Asia Rainforest", "Bosawas","Daintree Rain Forest", "a"],
+             ["Which country is known as 'Land of Thousands Lakes'?","Iceland", "Norway", "Finland", "Switzerland","c"],
+             ["In which country, white elephant is found?","India", "Sirlanka", "Thailand", "Malaysia","c"]]
+
+
+#Details about players
 nam = input("Enter your name:")
-name=nam.upper()
+name = nam.upper()
 amount = 0
-result = "T"
+
+#START
+
 command = input("press y to start and n to abort:")
-if (result == "T"):
-    match command:
-        case "y":
-            temp = "t"
-            for i in range(10):
-                if ("temp=t"):
-                    # print(name,"Total win:",amount)
-                    print(i+1, questions[0+i])
+match command:
+    case "y":
+        temp = "t"
+        for i in range(10):
+
+            #Inorder to access the lists of list
+            question = questions[i]
+            if ("temp=t"):
+                
+                    #Question and Options Displays here
+                    print(i+1,f"{question[0]}")
+                    print(f"a.{question[1]}                             b.{question[2]}")
+                    print(f"c.{question[3]}                             d.{question[4]}")
                     ret = input("Enter the option:")
                     ret.lower()
-                    if (ret.lower() == ans[0+i]):
+
+                    
+                    #IF CORRECT ANSWER IS ENTERED
+                    if (ret.lower() == question[5]):
                         amount = amount+100000
                         print("Congratulation", name, "you have won:", amount)
-                        wish = input("Do you wish to continue playing y or n:")
-                        if(i==9):
-                            print(name, "your total win is:", amount,"You are CROREPATI")
+                        print(":".center(50, "."))
+                        if (i == 9):
+                            print(name, "your total win is:",amount, "You are CROREPATI")
                             print("Thankyou for Playing".center(50, "-"))
                             break
-                        elif (wish.lower() == "y"):
-                            pass
-                        else:
-                            print(name, "You have won:", amount)
-                            print("Thank you for playing".center(50, "."))
-                            print(":".center(50, "."))
-                            break
-
+                    #IF WRONG ANSWER IS ENTERED
                     else:
                         print("The option which you have entered is wrong".center(50, "/"))
                         print(name, "your total win is:", amount)
                         print("Thankyou for Playing".center(50, "-"))
+                        break    
+                    
+                    #To Check if the User wants to Continue Playing or not
+                    wish = input("Do you wish to continue playing y or n:")
+                    if (wish.lower() == "y"):
+                        pass
+                    else:
+                        print("Thank you for playing".center(50, "."))
+                        print(name, "You have won:", amount)
+                        print(":".center(50, "."))
                         break
 
-        case "n":
-            print(name, "You have won:", amount)
-            print("Thank you for playing".center(50, "."))
-            result = "F"
-        case __:
-            print("Invalid Input")
+            else:
+                print("Thank you for playing".center(50, "."))
+                print(name, "You have won:", amount)
+                print(":".center(50, "."))
+                break
+
+               
+
+
+    case "n":
+        print(name, "You have won:", amount)
+        print("Thank you for playing".center(50, "."))
+        result = "F"
+    case __:
+        print("Invalid Input")
